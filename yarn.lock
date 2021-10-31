@@ -714,10 +714,10 @@ eslint-config-prettier@^8.3.0:
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.3.0.tgz#f7471b20b6fe8a9a9254cc684454202886a2dd7a"
   integrity sha512-BgZuLUSeKzvlL/VUjx/Yb787VQ26RU3gGjA3iiFvdsp/2bMfVIWUVP7tjxtjS0e+HP409cPlPvNkQloz8C91ew==
 
-eslint-config-schoolseat@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-schoolseat/-/eslint-config-schoolseat-1.0.0.tgz#c1bef2b48a3bc57ec76e769ec3953143514cc6a7"
-  integrity sha512-eC2bhiiZfxrsxGt4wuPj8xl56YUtG6pjEXm59EezNTk06gzJpSw5sP7WW3KjEp1sALArIMv/jPtflxWgz4LLiA==
+eslint-config-schoolseat@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-config-schoolseat/-/eslint-config-schoolseat-1.0.1.tgz#755d7978fbfc7be2c7f1312c221fb509baa5af4b"
+  integrity sha512-60S7y4Mq2WTPrZ5UP58vNz2mfbjPm1JlAdAYCKqiHrEUcNchLszoWgseaMk0JdI4i1c5QqUmmygzJjlwODMf6A==
 
 eslint-plugin-prettier@^4.0.0:
   version "4.0.0"
