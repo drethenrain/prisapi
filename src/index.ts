@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { networkInterfaces } from 'os';
 import express from 'express';
 
@@ -17,5 +18,5 @@ app.use('/api', route);
 app.listen(3333, () => {
   console.log('[SERVER] Server is running');
   console.log(`[SERVER] http://${ip}:3333`);
-  console.log(`[SERVER] http://localhost:3333`);
+  console.log('[SERVER] http://localhost:3333');
 });

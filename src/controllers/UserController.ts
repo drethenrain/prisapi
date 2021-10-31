@@ -10,8 +10,8 @@ class UserController {
   async findById(req: Request, res: Response) {
     const user = await prisma.user.findUnique({
       where: {
-        id: req.params.id,
-      },
+        id: req.params.id
+      }
     });
 
     if (!user) return res.json({ error: 'user not found' });
@@ -23,8 +23,8 @@ class UserController {
     if (
       await prisma.user.findUnique({
         where: {
-          email: req.body.email,
-        },
+          email: req.body.email
+        }
       })
     )
       return res.json({ error: 'user already exists' });
@@ -32,8 +32,8 @@ class UserController {
     const user = await prisma.user.create({
       data: {
         email: req.body.email,
-        name: req.body.name,
-      },
+        name: req.body.name
+      }
     });
     return res.json(user);
   }
@@ -42,16 +42,16 @@ class UserController {
     if (
       !(await prisma.user.findUnique({
         where: {
-          id: req.params.id,
-        },
+          id: req.params.id
+        }
       }))
     )
       return res.json({ error: 'user not found' });
 
     await prisma.user.delete({
       where: {
-        id: req.params.id,
-      },
+        id: req.params.id
+      }
     });
 
     return res.json({ message: 'ok' });
@@ -61,17 +61,17 @@ class UserController {
     if (
       !(await prisma.user.findUnique({
         where: {
-          id: req.params.id,
-        },
+          id: req.params.id
+        }
       }))
     )
       return res.json({ error: 'user not found' });
 
     const user = await prisma.user.update({
       where: {
-        id: req.params.id,
+        id: req.params.id
       },
-      data: req.body,
+      data: req.body
     });
 
     return res.json(user);

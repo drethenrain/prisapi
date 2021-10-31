@@ -6,14 +6,14 @@ class AuthController {
   async login(req: Request, res: Response) {
     const user = await prisma.user.findUnique({
       where: {
-        email: req.body.email,
-      },
+        email: req.body.email
+      }
     });
 
     if (!user) return res.json({ error: 'user not found' });
 
     const token = sign({ id: user.id }, process.env.SECRET as string, {
-      expiresIn: 86400,
+      expiresIn: 86400
     });
 
     return res.json({ user, token });
