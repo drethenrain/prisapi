@@ -1,6 +1,8 @@
-import { prisma } from '../prisma/client';
-import { sign, verify as JWTVerify } from 'jsonwebtoken';
+import { compare } from 'bcryptjs';
 import type { Request, Response, NextFunction } from 'express';
+import { sign, verify as JWTVerify } from 'jsonwebtoken';
+
+import { prisma } from '../prisma/client';
 
 class AuthController {
   async login(req: Request, res: Response) {
@@ -11,6 +13,9 @@ class AuthController {
     });
 
     if (!user) return res.json({ error: 'user not found' });
+
+    if (!(await compare(req.body.password, user.password)))
+      return res.status(400).json({ error: 'Invalid password' });
 
     const token = sign({ id: user.id }, process.env.SECRET as string, {
       expiresIn: 86400

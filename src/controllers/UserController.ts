@@ -1,6 +1,7 @@
-import { prisma } from '../prisma/client';
-
+import { hash } from 'bcryptjs';
 import type { Request, Response } from 'express';
+
+import { prisma } from '../prisma/client';
 
 class UserController {
   async findALl(req: Request, res: Response) {
@@ -32,7 +33,8 @@ class UserController {
     const user = await prisma.user.create({
       data: {
         email: req.body.email,
-        name: req.body.name
+        name: req.body.name,
+        password: await hash(req.body.password, 14)
       }
     });
     return res.json(user);
